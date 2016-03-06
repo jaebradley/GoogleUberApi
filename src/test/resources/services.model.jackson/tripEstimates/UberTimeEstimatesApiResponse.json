@@ -1,0 +1,34 @@
+{
+  "times": [
+    {
+      "localized_display_name": "uberX",
+      "estimate": 120,
+      "display_name": "uberX",
+      "product_id": "55c66225-fbe7-4fd5-9072-eab1ece5e23e"
+    },
+    {
+      "localized_display_name": "uberXL",
+      "estimate": 240,
+      "display_name": "uberXL",
+      "product_id": "6f72dfc5-27f1-42e8-84db-ccc7a75f6969"
+    },
+    {
+      "localized_display_name": "UberBLACK",
+      "estimate": 300,
+      "display_name": "UberBLACK",
+      "product_id": "6c84fd89-3f11-4782-9b50-97c468b19529"
+    },
+    {
+      "localized_display_name": "UberSUV",
+      "estimate": 360,
+      "display_name": "UberSUV",
+      "product_id": "6d318bcc-22a3-4af6-bddd-b409bfce1546"
+    },
+    {
+      "localized_display_name": "uberTAXI",
+      "estimate": 300,
+      "display_name": "uberTAXI",
+      "product_id": "8cf7e821-f0d3-49c6-8eba-e679c0ebcf6a"
+    }
+  ]
+}

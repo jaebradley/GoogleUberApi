@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class UberPriceEstimatesApiResponseTest {
 
     private final ObjectMapper mapper = new ObjectMapper();
-    private final String uberPriceEstimatesApiResponseFileName = "src/test/resources/services.model.jackson/tripEstimates/UberPriceEstimatesResponse.json";
+    private final String uberPriceEstimatesApiResponseFileName = "src/test/resources/services.model.jackson/tripEstimates/UberPriceEstimatesApiResponse.json";
     private final File uberPriceEstimatesApiResponseFile = new File(uberPriceEstimatesApiResponseFileName);
 
     @Test

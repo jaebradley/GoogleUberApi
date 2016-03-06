@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class GeocodingApiResponseTest {
 
     private final ObjectMapper mapper = new ObjectMapper();
-    private final String geocodingResponseFilePath = "src/test/resources/services.model.jackson/geocoding/GeocodingResponse.json";
+    private final String geocodingResponseFilePath = "src/test/resources/services.model.jackson/geocoding/GeocodingApiResponse.json";
     private final File geocodingResponseFile = new File(geocodingResponseFilePath);
 
     @Test
