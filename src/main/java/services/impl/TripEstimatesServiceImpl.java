@@ -26,8 +26,7 @@ public class TripEstimatesServiceImpl implements TripEstimatesService{
             paramMap.put("end_longitude", endLongitude.toPlainString());
             paramMap.put("server_token", SERVER_TOKEN);
             final Content content = Request.Get(HttpRequestUtil.addQueryParams(UBER_PRICE_ESTIMATES_ENDPOINT, paramMap)).execute().returnContent();
-            UberPriceEstimatesApiResponse uberPriceEstimatesApiResponse = new ObjectMapper().readValue(content.asStream(), UberPriceEstimatesApiResponse.class);
-            return uberPriceEstimatesApiResponse;
+            return new ObjectMapper().readValue(content.asStream(), UberPriceEstimatesApiResponse.class);
         } catch (IOException e) {
             throw new BadRequestException("Can't make request");
         }

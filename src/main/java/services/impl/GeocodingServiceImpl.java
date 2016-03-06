@@ -22,8 +22,7 @@ public class GeocodingServiceImpl implements GeocodingService {
             paramMap.put("address", address);
             paramMap.put("key", API_KEY);
             final Content content = Request.Get(HttpRequestUtil.addQueryParams(GEOCODING_ENDPOINT, paramMap)).execute().returnContent();
-            GeocodingApiResponse geocodingApiResponse = new ObjectMapper().readValue(content.asStream(), GeocodingApiResponse.class);
-            return geocodingApiResponse;
+            return new ObjectMapper().readValue(content.asStream(), GeocodingApiResponse.class);
         } catch (IOException e) {
             throw new BadRequestException("Can't make request");
         }
