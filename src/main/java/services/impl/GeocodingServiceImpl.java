@@ -3,7 +3,7 @@ package services.impl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
-import services.interfaces.GeolocationService;
+import services.interfaces.GeocodingService;
 import services.model.jackson.GeocodingApiResponse;
 
 import javax.ws.rs.BadRequestException;
@@ -13,7 +13,7 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GeocodingServiceImpl implements GeolocationService {
+public class GeocodingServiceImpl implements GeocodingService {
     public static final String GEOCODING_ENDPOINT = "https://maps.googleapis.com/maps/api/geocode/json?";
     public static final String API_KEY = "AIzaSyCqY_GY36jbVcoCF8m-SNNqgLjKizIf7rQ";
 

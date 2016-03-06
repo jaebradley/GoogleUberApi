@@ -2,6 +2,6 @@ package services.interfaces;
 
 import services.model.jackson.GeocodingApiResponse;
 
-public interface GeolocationService {
+public interface GeocodingService {
     GeocodingApiResponse getGeocodingData(final String address);
 }
