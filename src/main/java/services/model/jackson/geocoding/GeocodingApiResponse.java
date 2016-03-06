@@ -1,4 +1,4 @@
-package services.model.jackson;
+package services.model.jackson.geocoding;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

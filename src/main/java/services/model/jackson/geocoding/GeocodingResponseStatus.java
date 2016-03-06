@@ -1,4 +1,4 @@
-package services.model.jackson;
+package services.model.jackson.geocoding;
 
 public enum GeocodingResponseStatus {
     OK("OK");

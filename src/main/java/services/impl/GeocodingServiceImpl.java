@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
 import services.interfaces.GeocodingService;
-import services.model.jackson.GeocodingApiResponse;
+import services.model.jackson.geocoding.GeocodingApiResponse;
 
 import javax.ws.rs.BadRequestException;
 import java.io.IOException;

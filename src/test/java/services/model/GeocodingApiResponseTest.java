@@ -3,7 +3,7 @@ package services.model;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
 import org.junit.Test;
-import services.model.jackson.GeocodingApiResponse;
+import services.model.jackson.geocoding.GeocodingApiResponse;
 
 import java.io.File;
 import java.math.BigDecimal;
@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class GeocodingApiResponseTest {
 
     private final ObjectMapper mapper = new ObjectMapper();
-    private final String geocodingResponseFilePath = "src/test/resources/services.model.jackson/GeocodingResponse.json";
+    private final String geocodingResponseFilePath = "src/test/resources/services.model.jackson/geocoding/GeocodingResponse.json";
     private final File geocodingResponseFile = new File(geocodingResponseFilePath);
 
     @Test
