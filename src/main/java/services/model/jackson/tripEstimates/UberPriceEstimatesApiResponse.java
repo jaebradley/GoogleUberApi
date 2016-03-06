@@ -18,7 +18,7 @@ public class UberPriceEstimatesApiResponse {
         private final int lowEstimate;
         private final int highEstimate;
         private final BigDecimal surgeMultiplier;
-        private final Integer durationSeconds;
+        private final int durationSeconds;
         private final BigDecimal distanceMiles;
 
         @JsonCreator
@@ -29,7 +29,7 @@ public class UberPriceEstimatesApiResponse {
                      @JsonProperty("low_estimate") final int lowEstimate,
                      @JsonProperty("high_estimate") final int highEstimate,
                      @JsonProperty("surge_multiplier") final BigDecimal surgeMultiplier,
-                     @JsonProperty("duration") final Integer durationSeconds,
+                     @JsonProperty("duration") final int durationSeconds,
                      @JsonProperty("distance") final BigDecimal distanceMiles) {
             this.productId = productId;
             this.productName = productName;
@@ -78,7 +78,7 @@ public class UberPriceEstimatesApiResponse {
         }
 
         @JsonProperty("duration")
-        public Integer getDurationSeconds() {
+        public int getDurationSeconds() {
             return durationSeconds;
         }
 
@@ -96,7 +96,7 @@ public class UberPriceEstimatesApiResponse {
     }
 
     @JsonProperty("prices")
-    public Price[] getPrice() {
+    public Price[] getPrices() {
         return prices;
     }
 }

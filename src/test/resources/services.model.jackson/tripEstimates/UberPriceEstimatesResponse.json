@@ -1,0 +1,69 @@
+{
+  "prices": [
+    {
+      "localized_display_name": "uberX",
+      "high_estimate": 11,
+      "minimum": 5,
+      "duration": 660,
+      "estimate": "$8-11",
+      "distance": 2.98,
+      "display_name": "uberX",
+      "product_id": "55c66225-fbe7-4fd5-9072-eab1ece5e23e",
+      "low_estimate": 8,
+      "surge_multiplier": 1,
+      "currency_code": "USD"
+    },
+    {
+      "localized_display_name": "uberXL",
+      "high_estimate": 19,
+      "minimum": 7,
+      "duration": 660,
+      "estimate": "$14-19",
+      "distance": 2.98,
+      "display_name": "uberXL",
+      "product_id": "6f72dfc5-27f1-42e8-84db-ccc7a75f6969",
+      "low_estimate": 14,
+      "surge_multiplier": 1,
+      "currency_code": "USD"
+    },
+    {
+      "localized_display_name": "UberBLACK",
+      "high_estimate": 28,
+      "minimum": 15,
+      "duration": 660,
+      "estimate": "$22-28",
+      "distance": 2.98,
+      "display_name": "UberBLACK",
+      "product_id": "6c84fd89-3f11-4782-9b50-97c468b19529",
+      "low_estimate": 22,
+      "surge_multiplier": 1,
+      "currency_code": "USD"
+    },
+    {
+      "localized_display_name": "UberSUV",
+      "high_estimate": 37,
+      "minimum": 25,
+      "duration": 660,
+      "estimate": "$30-37",
+      "distance": 2.98,
+      "display_name": "UberSUV",
+      "product_id": "6d318bcc-22a3-4af6-bddd-b409bfce1546",
+      "low_estimate": 30,
+      "surge_multiplier": 1,
+      "currency_code": "USD"
+    },
+    {
+      "localized_display_name": "uberTAXI",
+      "high_estimate": null,
+      "minimum": null,
+      "duration": 660,
+      "estimate": "Metered",
+      "distance": 2.98,
+      "display_name": "uberTAXI",
+      "product_id": "8cf7e821-f0d3-49c6-8eba-e679c0ebcf6a",
+      "low_estimate": null,
+      "surge_multiplier": 1,
+      "currency_code": null
+    }
+  ]
+}
