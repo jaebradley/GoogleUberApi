@@ -3,12 +3,12 @@ package services.impl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
+import services.exceptions.UberApiException;
 import services.interfaces.TripEstimatesService;
 import services.model.jackson.tripEstimates.UberPriceEstimatesApiResponse;
 import services.model.jackson.tripEstimates.UberTimeEstimatesApiResponse;
 import services.utils.HttpRequestUtil;
 
-import javax.ws.rs.BadRequestException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -19,7 +19,7 @@ public class TripEstimatesServiceImpl implements TripEstimatesService{
     private static final String UBER_TIME_ESTIMATES_ENDPOINT = "https://api.uber.com/v1/estimates/time?";
     private static final String SERVER_TOKEN = "We0MNCaIpx00F_TUopt4jgL9BzW3bWWt16aYM4mh";
 
-    public UberPriceEstimatesApiResponse getUberPriceEstimates(final BigDecimal startLatitude, final BigDecimal startLongitude, final BigDecimal endLatitude, final BigDecimal endLongitude) {
+    public UberPriceEstimatesApiResponse getUberPriceEstimates(final BigDecimal startLatitude, final BigDecimal startLongitude, final BigDecimal endLatitude, final BigDecimal endLongitude) throws UberApiException {
         try{
             final Map<String, String> paramMap = new HashMap<String, String>();
             paramMap.put("start_latitude", startLatitude.toPlainString());
@@ -30,11 +30,11 @@ public class TripEstimatesServiceImpl implements TripEstimatesService{
             final Content content = Request.Get(HttpRequestUtil.addQueryParams(UBER_PRICE_ESTIMATES_ENDPOINT, paramMap)).execute().returnContent();
             return new ObjectMapper().readValue(content.asStream(), UberPriceEstimatesApiResponse.class);
         } catch (IOException e) {
-            throw new BadRequestException("Can't make request");
+            throw new UberApiException("Can't make request");
         }
     }
 
-    public UberTimeEstimatesApiResponse getUberTimeEstimates(final BigDecimal startLatitude, final BigDecimal startLongitude) {
+    public UberTimeEstimatesApiResponse getUberTimeEstimates(final BigDecimal startLatitude, final BigDecimal startLongitude) throws UberApiException{
         try{
             final Map<String, String> paramMap = new HashMap<String, String>();
             paramMap.put("start_latitude", startLatitude.toPlainString());
@@ -43,7 +43,7 @@ public class TripEstimatesServiceImpl implements TripEstimatesService{
             final Content content = Request.Get(HttpRequestUtil.addQueryParams(UBER_TIME_ESTIMATES_ENDPOINT, paramMap)).execute().returnContent();
             return new ObjectMapper().readValue(content.asStream(), UberTimeEstimatesApiResponse.class);
         } catch (IOException e) {
-            throw new BadRequestException("Can't make request");
+            throw new UberApiException("Can't make request");
         }
     }
 }
