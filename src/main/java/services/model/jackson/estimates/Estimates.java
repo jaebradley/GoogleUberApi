@@ -3,30 +3,31 @@ package services.model.jackson.estimates;
 import java.math.BigDecimal;
 
 public class Estimates {
-    public static class Estimate {
-        public static class Location {
-            private final String address;
-            private final BigDecimal latitude;
-            private final BigDecimal longitude;
+    public static class Location {
+        private final String address;
+        private final BigDecimal latitude;
+        private final BigDecimal longitude;
 
-            public Location(final String address, final BigDecimal latitude, final BigDecimal longitude) {
-                this.address = address;
-                this.latitude = latitude;
-                this.longitude = longitude;
-            }
-
-            public String getAddress() {
-                return address;
-            }
-
-            public BigDecimal getLatitude() {
-                return latitude;
-            }
-
-            public BigDecimal getLongitude() {
-                return longitude;
-            }
+        public Location(final String address, final BigDecimal latitude, final BigDecimal longitude) {
+            this.address = address;
+            this.latitude = latitude;
+            this.longitude = longitude;
         }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public BigDecimal getLatitude() {
+            return latitude;
+        }
+
+        public BigDecimal getLongitude() {
+            return longitude;
+        }
+    }
+
+    public static class Estimate {
 
         public static class TripEstimate {
             public static class Price {
