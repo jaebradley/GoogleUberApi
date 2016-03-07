@@ -27,8 +27,7 @@ public class Estimates {
         }
     }
 
-    public static class Estimate {
-
+    public static class VendorEstimate {
         public static class TripEstimate {
             public static class Price {
                 private final int lowEstimate;
@@ -62,15 +61,21 @@ public class Estimates {
 
             public static class Trip {
                 private final int durationSeconds;
+                private final int waitSeconds;
                 private final BigDecimal distanceMiles;
 
-                public Trip(final int durationSeconds, final BigDecimal distanceMiles) {
+                public Trip(final int durationSeconds, final int waitSeconds, final BigDecimal distanceMiles) {
                     this.durationSeconds = durationSeconds;
+                    this.waitSeconds = waitSeconds;
                     this.distanceMiles = distanceMiles;
                 }
 
                 public int getDurationSeconds() {
                     return durationSeconds;
+                }
+
+                public int getWaitSeconds() {
+                    return waitSeconds;
                 }
 
                 public BigDecimal getDistanceMiles() {
@@ -102,14 +107,11 @@ public class Estimates {
         }
 
         private final TripVendor vendor;
-        private final Location startLocation;
-        private final Location endLocation;
         private final TripEstimate[] tripEstimates;
 
-        public Estimate(final TripVendor vendor, final Location startLocation, final Location endLocation, final TripEstimate[] tripEstimates) {
+        public VendorEstimate(final TripVendor vendor,
+            final TripEstimate[] tripEstimates) {
             this.vendor = vendor;
-            this.startLocation = startLocation;
-            this.endLocation = endLocation;
             this.tripEstimates = tripEstimates;
         }
 
@@ -117,26 +119,30 @@ public class Estimates {
             return vendor;
         }
 
-        public Location getStartLocation() {
-            return startLocation;
-        }
-
-        public Location getEndLocation() {
-            return endLocation;
-        }
-
         public TripEstimate[] getTripEstimates() {
             return tripEstimates;
         }
     }
 
-    private final Estimate[] estimates;
+    private final Location startLocation;
+    private final Location endLocation;
+    private final VendorEstimate[] vendorEstimates;
 
-    public Estimates(final Estimate[] estimates) {
-        this.estimates = estimates;
+    public Estimates(final Location startLocation, final Location endLocation, final VendorEstimate[] vendorEstimates) {
+        this.startLocation = startLocation;
+        this.endLocation = endLocation;
+        this.vendorEstimates = vendorEstimates;
     }
 
-    public Estimate[] getEstimates() {
-        return estimates;
+    public Location getStartLocation() {
+        return startLocation;
+    }
+
+    public Location getEndLocation() {
+        return endLocation;
+    }
+
+    public VendorEstimate[] getVendorEstimates() {
+        return vendorEstimates;
     }
 }

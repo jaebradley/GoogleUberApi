@@ -1,18 +1,20 @@
 package services.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import services.exceptions.UberApiException;
 import services.interfaces.TripEstimatesService;
 import services.model.jackson.tripEstimates.UberPriceEstimatesApiResponse;
 import services.model.jackson.tripEstimates.UberTimeEstimatesApiResponse;
 import services.utils.HttpRequestUtil;
-
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
 
 public class TripEstimatesServiceImpl implements TripEstimatesService{
     private static final String UBER_PRICE_ESTIMATES_ENDPOINT = "https://api.uber.com/v1/estimates/price?";

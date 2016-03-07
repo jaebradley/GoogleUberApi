@@ -1,12 +1,13 @@
 package services.model.jackson.tripEstimates;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class UberPriceEstimatesApiResponseTest {
 

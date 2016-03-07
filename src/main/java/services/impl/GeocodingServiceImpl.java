@@ -1,16 +1,18 @@
 package services.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import services.exceptions.GoogleApiException;
 import services.interfaces.GeocodingService;
 import services.model.jackson.geocoding.GeocodingApiResponse;
 import services.utils.HttpRequestUtil;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class GeocodingServiceImpl implements GeocodingService {
     public static final String GEOCODING_ENDPOINT = "https://maps.googleapis.com/maps/api/geocode/json?";

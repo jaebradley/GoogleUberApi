@@ -1,11 +1,12 @@
 package services.model.jackson.tripEstimates;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.IOException;
+
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.File;
-import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class UberTimeEstimatesApiResponseTest {
     private final ObjectMapper mapper = new ObjectMapper();

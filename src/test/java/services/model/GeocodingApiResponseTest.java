@@ -1,12 +1,14 @@
 package services.model;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Assert;
-import org.junit.Test;
-import services.model.jackson.geocoding.GeocodingApiResponse;
-
 import java.io.File;
 import java.math.BigDecimal;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import services.model.jackson.geocoding.GeocodingApiResponse;
 
 public class GeocodingApiResponseTest {
 
