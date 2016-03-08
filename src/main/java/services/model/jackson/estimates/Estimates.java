@@ -130,10 +130,12 @@ public class Estimates {
             this.tripEstimates = tripEstimates;
         }
 
+        @JsonProperty("vendor")
         public TripVendor getVendor() {
             return vendor;
         }
 
+        @JsonProperty("tripEstimates")
         public TripEstimate[] getTripEstimates() {
             return tripEstimates;
         }
