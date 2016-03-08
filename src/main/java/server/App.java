@@ -13,7 +13,7 @@ public class App {
         sh.setInitParameter("com.sun.jersey.config.property.packages", "api.estimates");//Set the package where the services reside
         sh.setInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true");
 
-        Server server = new Server(9999);
+        Server server = new Server(8888);
         ServletContextHandler context = new ServletContextHandler(server, "/", ServletContextHandler.SESSIONS);
         context.addServlet(sh, "/*");
         server.start();

@@ -15,7 +15,7 @@ import services.model.jackson.tripEstimates.UberTimeEstimatesApiResponse.Time;
 
 public class AggregatedDataParserImpl implements AggregatedDataParser {
   public VendorEstimate[] createVendorEstimates(final UberPriceEstimatesApiResponse uberPriceEstimatesApiResponse,
-      final UberTimeEstimatesApiResponse uberTimeEstimatesApiResponse) {
+                                                final UberTimeEstimatesApiResponse uberTimeEstimatesApiResponse) {
     final TripEstimate[] tripEstimates = createTripEstimates(uberPriceEstimatesApiResponse, uberTimeEstimatesApiResponse);
     return new VendorEstimate[] {
         new VendorEstimate(
@@ -26,7 +26,7 @@ public class AggregatedDataParserImpl implements AggregatedDataParser {
   }
 
   public TripEstimate[] createTripEstimates(final UberPriceEstimatesApiResponse uberPriceEstimatesApiResponse,
-      final UberTimeEstimatesApiResponse uberTimeEstimatesApiResponse) {
+                                            final UberTimeEstimatesApiResponse uberTimeEstimatesApiResponse) {
     final TripEstimate[] tripEstimates = new TripEstimate[]{};
     int counter = 0;
     for (final Price price : uberPriceEstimatesApiResponse.getPrices()) {

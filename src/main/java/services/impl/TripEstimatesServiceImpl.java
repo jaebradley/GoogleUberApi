@@ -21,7 +21,10 @@ public class TripEstimatesServiceImpl implements TripEstimatesService{
     private static final String UBER_TIME_ESTIMATES_ENDPOINT = "https://api.uber.com/v1/estimates/time?";
     private static final String SERVER_TOKEN = "We0MNCaIpx00F_TUopt4jgL9BzW3bWWt16aYM4mh";
 
-    public UberPriceEstimatesApiResponse getUberPriceEstimates(final BigDecimal startLatitude, final BigDecimal startLongitude, final BigDecimal endLatitude, final BigDecimal endLongitude) throws UberApiException {
+    public UberPriceEstimatesApiResponse getUberPriceEstimates(final BigDecimal startLatitude,
+                                                               final BigDecimal startLongitude,
+                                                               final BigDecimal endLatitude,
+                                                               final BigDecimal endLongitude) throws UberApiException {
         try{
             final Map<String, String> paramMap = new HashMap<String, String>();
             paramMap.put("start_latitude", startLatitude.toPlainString());
@@ -36,7 +39,8 @@ public class TripEstimatesServiceImpl implements TripEstimatesService{
         }
     }
 
-    public UberTimeEstimatesApiResponse getUberTimeEstimates(final BigDecimal startLatitude, final BigDecimal startLongitude) throws UberApiException{
+    public UberTimeEstimatesApiResponse getUberTimeEstimates(final BigDecimal startLatitude,
+                                                             final BigDecimal startLongitude) throws UberApiException{
         try{
             final Map<String, String> paramMap = new HashMap<String, String>();
             paramMap.put("start_latitude", startLatitude.toPlainString());

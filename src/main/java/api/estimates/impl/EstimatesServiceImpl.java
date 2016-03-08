@@ -5,6 +5,8 @@ import javax.ws.rs.BadRequestException;
 import api.estimates.interfaces.AggregatedDataParser;
 import api.estimates.interfaces.EstimatesService;
 import api.estimates.model.AggregatedData;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import services.exceptions.GoogleApiException;
 import services.exceptions.UberApiException;
 import services.interfaces.GeocodingService;
@@ -18,12 +20,16 @@ public class EstimatesServiceImpl implements EstimatesService {
     private final GeocodingService geocodingService;
     private final TripEstimatesService tripEstimatesService;
     private final AggregatedDataParser aggregatedDataParser;
+    private final ObjectMapper objectMapper;
 
     public EstimatesServiceImpl(final GeocodingService geocodingService,
-        final TripEstimatesService tripEstimatesService, final AggregatedDataParser aggregatedDataParser) {
+                                final TripEstimatesService tripEstimatesService,
+                                final AggregatedDataParser aggregatedDataParser,
+                                final ObjectMapper objectMapper) {
         this.geocodingService = geocodingService;
         this.tripEstimatesService = tripEstimatesService;
         this.aggregatedDataParser = aggregatedDataParser;
+        this.objectMapper = objectMapper;
     }
 
     public AggregatedData getAggregatedData(final String startAddress, final String endAddress) {
@@ -59,5 +65,13 @@ public class EstimatesServiceImpl implements EstimatesService {
 
     public Estimates getEstimates(final String startAddress, final String endAddress) {
         return aggregatedDataParser.createEstimates(getAggregatedData(startAddress, endAddress));
+    }
+
+    public String getSerializedEstimates(final String startAddress, final String endAddress) {
+        try {
+            return objectMapper.writeValueAsString(getEstimates(startAddress, endAddress));
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Unable to serialize json");
+        }
     }
 }
