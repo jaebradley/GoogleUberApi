@@ -1,5 +1,7 @@
 package services.model.jackson.estimates;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.math.BigDecimal;
 
 public class Estimates {
@@ -14,14 +16,17 @@ public class Estimates {
             this.longitude = longitude;
         }
 
+        @JsonProperty("address")
         public String getAddress() {
             return address;
         }
 
+        @JsonProperty("latitude")
         public BigDecimal getLatitude() {
             return latitude;
         }
 
+        @JsonProperty("longitude")
         public BigDecimal getLongitude() {
             return longitude;
         }
@@ -42,18 +47,22 @@ public class Estimates {
                     this.currencyCode = currencyCode;
                 }
 
+                @JsonProperty("lowEstimate")
                 public int getLowEstimate() {
                     return lowEstimate;
                 }
 
+                @JsonProperty("highEstimate")
                 public int getHighEstimate() {
                     return highEstimate;
                 }
 
+                @JsonProperty("surgeMultiplier")
                 public BigDecimal getSurgeMultiplier() {
                     return surgeMultiplier;
                 }
 
+                @JsonProperty("currencyCode")
                 public String getCurrencyCode() {
                     return currencyCode;
                 }
@@ -70,14 +79,17 @@ public class Estimates {
                     this.distanceMiles = distanceMiles;
                 }
 
+                @JsonProperty("durationSeconds")
                 public int getDurationSeconds() {
                     return durationSeconds;
                 }
 
+                @JsonProperty("waitSeconds")
                 public int getWaitSeconds() {
                     return waitSeconds;
                 }
 
+                @JsonProperty("distanceMiles")
                 public BigDecimal getDistanceMiles() {
                     return distanceMiles;
                 }
@@ -93,14 +105,17 @@ public class Estimates {
                 this.trip = trip;
             }
 
+            @JsonProperty("productName")
             public String getProductName() {
                 return productName;
             }
 
+            @JsonProperty("price")
             public Price getPrice() {
                 return price;
             }
 
+            @JsonProperty("trip")
             public Trip getTrip() {
                 return trip;
             }
@@ -134,14 +149,17 @@ public class Estimates {
         this.vendorEstimates = vendorEstimates;
     }
 
+    @JsonProperty("startLocation")
     public Location getStartLocation() {
         return startLocation;
     }
 
+    @JsonProperty("endLocation")
     public Location getEndLocation() {
         return endLocation;
     }
 
+    @JsonProperty("vendorEstimates")
     public VendorEstimate[] getVendorEstimates() {
         return vendorEstimates;
     }
