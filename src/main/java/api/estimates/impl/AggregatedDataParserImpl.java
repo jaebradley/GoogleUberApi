@@ -27,7 +27,7 @@ public class AggregatedDataParserImpl implements AggregatedDataParser {
 
   public TripEstimate[] createTripEstimates(final UberPriceEstimatesApiResponse uberPriceEstimatesApiResponse,
                                             final UberTimeEstimatesApiResponse uberTimeEstimatesApiResponse) {
-    final TripEstimate[] tripEstimates = new TripEstimate[]{};
+    final TripEstimate[] tripEstimates = new TripEstimate[Math.max(uberPriceEstimatesApiResponse.getPrices().length, uberTimeEstimatesApiResponse.getTimes().length)];
     int counter = 0;
     for (final Price price : uberPriceEstimatesApiResponse.getPrices()) {
       for (final Time time : uberTimeEstimatesApiResponse.getTimes()) {
