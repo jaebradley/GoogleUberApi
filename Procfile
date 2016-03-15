@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* server/App
+web: java -jar target/GoogleUberApi-1.0-SNAPSHOT.jar
