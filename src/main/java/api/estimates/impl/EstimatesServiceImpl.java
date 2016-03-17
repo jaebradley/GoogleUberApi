@@ -1,6 +1,8 @@
 package api.estimates.impl;
 
 import javax.ws.rs.BadRequestException;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Response;
 
 import api.estimates.interfaces.AggregatedDataParser;
 import api.estimates.interfaces.EstimatesService;
@@ -50,16 +52,16 @@ public class EstimatesServiceImpl implements EstimatesService {
                             uberTimeEstimatesApiResponse
                         );
                     } catch (UberApiException e) {
-                        throw new BadRequestException("Unable to get time estimates from Uber");
+                        throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST).entity("Unable to get time estimates from Uber").build());
                     }
                 } catch (UberApiException e) {
-                    throw new BadRequestException("Unable to get price estimates from Uber");
+                    throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST).entity("Unable to get price estimates from Uber").build());
                 }
             } catch (GoogleApiException e) {
-                throw new BadRequestException("Unable to get end address information from Google");
+                throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST).entity("Unable to get end address information from Google").build());
             }
         } catch (GoogleApiException e) {
-            throw new BadRequestException("Unable to get start address information from Google");
+            throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST).entity("Unable to get start address information from Google").build());
         }
     }
 
@@ -71,7 +73,7 @@ public class EstimatesServiceImpl implements EstimatesService {
         try {
             return objectMapper.writeValueAsString(getEstimates(startAddress, endAddress));
         } catch (JsonProcessingException e) {
-            throw new RuntimeException("Unable to serialize json");
+            throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST).entity("Unable to serialize json").build());
         }
     }
 }
